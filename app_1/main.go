@@ -73,4 +73,79 @@ func main() {
 	byteLength := len(str)
 	runeCount := utf8.RuneCountInString(str)
 	fmt.Printf("String '%s' has length (bytes): %d, and count (runes): %d\n", str, byteLength, runeCount)
+
+	var x int32 = 10
+	if x > 10 {
+		fmt.Println("Big")
+	} else if x < 10 {
+		fmt.Println("Small")
+	} else {
+		fmt.Println("Equal")
+	}
+
+	// Go's only loop, you can use range too
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+	for x < 100 {
+		x *= 2
+		fmt.Println(x)
+	}
+
+	var day = "Mon"
+	switch day {
+	case "Mon":
+		fmt.Println("Monday")
+	case "Fri":
+		fmt.Println("Friday")
+	default:
+		fmt.Println("Other day")
+	}
+
+	var result = add(9, 12)
+	// fmt.Printf(result) this can not be used
+	// fmt.Printf("%d\n", result) but can be used like this
+	fmt.Println(result)
+
+	var div, err = divide(12, 22.3)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(div)
+	}
+
+	// Fixed size array
+	arr := [3]int{1, 2, 3}
+	fmt.Println(arr[0])
+	fmt.Println(arr[2])
+
+	// Dynamic array
+	array := []int{1, 2, 3, 4, 5}
+	array = append(array, 7)
+	fmt.Println(array[1])
+	fmt.Println(array[3])
+	fmt.Println(array[5])
+
+	// Map like PHP's Associative array
+	m := map[string]int{"age": 25, "year": 2002}
+	m["order"] = 35
+	val, ok := m["age"]
+	if ok {
+		fmt.Println(val)
+	} else {
+		fmt.Printf("Value not found\n")
+	}
+}
+
+// functions in go
+func add(a int, b int) int {
+	return a + b
+}
+
+// Common error return in Go
+func divide(a, b float64) (float64, error) {
+	if b == 0 {
+		return 0, fmt.Errorf("division by zero")
+	}
+	return a / b, nil
 }
