@@ -135,6 +135,13 @@ func main() {
 	} else {
 		fmt.Printf("Value not found\n")
 	}
+
+	var sumResult = sum(1, 2, 3, 4)
+	fmt.Println(sumResult)
+
+	arr_1 := []int{1, 2, 3, 4, 5, 6, 7}
+	sumResult1 := sum(arr_1...)
+	fmt.Println(sumResult1)
 }
 
 // functions in go
@@ -148,4 +155,15 @@ func divide(a, b float64) (float64, error) {
 		return 0, fmt.Errorf("division by zero")
 	}
 	return a / b, nil
+}
+
+// ...int collect arguments in a slice
+// Like func sum(nums []int) int
+// Called Variadic
+func sum(nums ...int) int {
+	total := 0
+	for _, n := range nums {
+		total += n
+	}
+	return total
 }
