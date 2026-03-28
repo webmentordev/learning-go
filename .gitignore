@@ -1,3 +1,4 @@
 /app_*/app
 /cli_*/cli
-/server_*/server
+/http_server_*/server
+/errors_*/error
