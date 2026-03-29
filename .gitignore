@@ -1,4 +1,7 @@
-/app_*/app
-/cli_*/cli
-/http_server_*/server
-/errors_*/error
+/app*/app*
+/cli*/cli*
+/http_server*/server*
+/errors*/error*
+/array*/array*
+/slice*/slice*
+/map*/map*
