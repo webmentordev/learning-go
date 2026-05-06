@@ -9,3 +9,5 @@
 /struct*/struct*
 /pointer*/pointer*
 /goroutines*/goroutines*
+/channels*/channels*
+/generics*/generics*
